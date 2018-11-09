@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-LABEL maintaine="mike.kinney@gmail.com"
+LABEL maintainer="mike.kinney@gmail.com"
 
 RUN apt-get update -y && \
     apt-get install -y python3-pip python3-dev
