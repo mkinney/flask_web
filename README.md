@@ -1,9 +1,9 @@
 [![Build Status](https://travis-ci.org/mkinney/flask_web.svg?branch=master)](https://travis-ci.org/mkinney/flask_web)
 
-# Background:
+#Background
 Started from [dockerize-your-flask-application](https://runnable.com/docker/python/dockerize-your-flask-application)
 
-# Development:
+#Development
 Make sure the app works locally:
 
     virtualenv -p python3 venv
@@ -11,33 +11,59 @@ Make sure the app works locally:
     pip install -r requirements.txt
     python app.py
 
-# Build it: (or `make build`)
+#Build
 
     docker build -t flask-tutorial:latest .
 
-# Run it: (or `make run`)
+or
+
+	make build
+
+
+#Run
 
     docker run -d -p 5000:5000 flask-tutorial
 
-# Test that it works (or `make test`):
+or
 
-    # manually by opening http://localhost:5000/
+    make run
 
-# Ensure that we do not have any pylint issues:
+#Test
+
+Open [http://localhost:5000/](http://localhost:5000/)
+
+Note: If you get an error "fixture 'host' not found", then be sure to activate your python virtual environment. (see Development above)
+
+You can also run:
+
+    make test
+
+#Lint
+Ensure that we do not have any pylint issues by running:
 
     make lint
 
-# Clean up: (or `make clean`)
+#Clean
 
     docker ps -a
     # Note: Use whatever docker id was created
     docker kill 487
     docker rm 487
 
+or
 
-# Tip: Create `.git/hooks/pre-commit`
+    make clean
 
+#Tips
+1. Create a git pre-commit hook to ensure code committed has some checks:
+
+a. Create `.git/hooks/pre-commit`
+
+``` bash
     #!/bin/bash
     make test
+```
 
-Ensure the script is executable: `chmod +x .git/hooks/pre-commit`
+b. Ensure the script is executable:
+
+    chmod +x .git/hooks/pre-commit
