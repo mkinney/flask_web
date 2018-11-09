@@ -1,26 +1,29 @@
-see https://runnable.com/docker/python/dockerize-your-flask-application
+Started from https://runnable.com/docker/python/dockerize-your-flask-application
 
-Make sure it works locally:
+Make sure the app works locally:
 
     virtualenv -p python3 venv
     source venv/bin/activate
     pip install -r requirements.txt
     python app.py
 
-Build it:
+Build it: (or "make build")
 
     docker build -t flask-tutorial:latest .
+
+Run it: (or "make run")
+
     docker run -d -p 5000:5000 flask-tutorial
 
-Test that it works (manually):
+Test that it works (or "make test"):
 
-    # click on: http://localhost:5000/
+    # manually by opening http://localhost:5000/
 
 Ensure that we do not have any pylint issues:
 
     make lint
 
-Clean up:
+Clean up: (or "make clean")
 
     docker ps -a
     # Note: Use whatever docker id was created
@@ -28,10 +31,9 @@ Clean up:
     docker rm 487
 
 
-Create .git/hooks/pre-commit
+Tip: Create .git/hooks/pre-commit
 
     #!/bin/bash
     make test
 
-Ensure it runs: chmod +x .git/hooks/pre-commit
-
+Ensure the script is executable: chmod +x .git/hooks/pre-commit
