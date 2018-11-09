@@ -12,6 +12,7 @@ test:
 
 lint:
 	pylint *.py
+	yamllint .*.yml
 
 all: lint clean build run test
 

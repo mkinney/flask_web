@@ -1,0 +1,11 @@
+---
+
+sudo: required
+
+language: python
+
+services:
+  - docker
+
+script:
+  make lint build run test
