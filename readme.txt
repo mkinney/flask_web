@@ -12,9 +12,13 @@ Build it:
     docker build -t flask-tutorial:latest .
     docker run -d -p 5000:5000 flask-tutorial
 
-Test it:
+Test that it works (manually):
 
     # click on: http://localhost:5000/
+
+Ensure that we do not have any pylint issues:
+
+    make lint
 
 Clean up:
 
@@ -22,3 +26,12 @@ Clean up:
     # Note: Use whatever docker id was created
     docker kill 487
     docker rm 487
+
+
+Create .git/hooks/pre-commit
+
+    #!/bin/bash
+    make test
+
+Ensure it runs: chmod +x .git/hooks/pre-commit
+

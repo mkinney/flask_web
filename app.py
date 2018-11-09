@@ -1,15 +1,14 @@
 #!/usr/bin/env python
-
-# flask_web/app.py
+""" Simple flask web application."""
 
 from flask import Flask
-app = Flask(__name__)
+APP = Flask(__name__)
 
-@app.route('/')
+@APP.route('/')
 def hello_world():
+    """ Show some text when we hit the default endpoint."""
     return 'Hey, we have Flask in a Docker container!'
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
-
+    APP.run(debug=True, host='0.0.0.0')
