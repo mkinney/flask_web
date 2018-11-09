@@ -1,9 +1,9 @@
 [![Build Status](https://travis-ci.org/mkinney/flask_web.svg?branch=master)](https://travis-ci.org/mkinney/flask_web)
 
-#Background
+# Background
 Started from [dockerize-your-flask-application](https://runnable.com/docker/python/dockerize-your-flask-application)
 
-#Development
+# Development
 Make sure the app works locally:
 
     virtualenv -p python3 venv
@@ -11,7 +11,7 @@ Make sure the app works locally:
     pip install -r requirements.txt
     python app.py
 
-#Build
+# Build
 
     docker build -t flask-tutorial:latest .
 
@@ -20,7 +20,7 @@ or
 	make build
 
 
-#Run
+# Run
 
     docker run -d -p 5000:5000 flask-tutorial
 
@@ -28,7 +28,7 @@ or
 
     make run
 
-#Test
+# Test
 
 Open [http://localhost:5000/](http://localhost:5000/)
 
@@ -38,12 +38,12 @@ You can also run:
 
     make test
 
-#Lint
+# Lint
 Ensure that we do not have any pylint issues by running:
 
     make lint
 
-#Clean
+# Clean
 
     docker ps -a
     # Note: Use whatever docker id was created
@@ -54,14 +54,14 @@ or
 
     make clean
 
-#Tips
+# Tips
 1. Create a git pre-commit hook to ensure code committed has some checks:
 
 a. Create `.git/hooks/pre-commit`
 
 ``` bash
-    #!/bin/bash
-    make test
+#!/bin/bash
+make test
 ```
 
 b. Ensure the script is executable:
