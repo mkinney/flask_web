@@ -16,4 +16,9 @@ Test it:
 
     # click on: http://localhost:5000/
 
+Clean up:
 
+    docker ps -a
+    # Note: Use whatever docker id was created
+    docker kill 487
+    docker rm 487
