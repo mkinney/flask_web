@@ -45,13 +45,6 @@ Ensure that we do not have any pylint issues by running:
 
 # Clean
 
-    docker ps -a
-    # Note: Use whatever docker id was created
-    docker kill 487
-    docker rm 487
-
-or
-
     make clean
 
 # Tips
