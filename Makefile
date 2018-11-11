@@ -5,7 +5,7 @@ run:
 	docker run -d -p 5000:5000 flask-tutorial
 
 clean:
-	docker rm -f $(shell docker ps -a --filter ancestor=flask-tutorial -q)
+	@./clean_docker.bash
 
 test:
 	py.test -v test_app.py
